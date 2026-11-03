@@ -1,0 +1,44 @@
+<view class="page tabbed">
+    <view class="profile-header">
+        <view class="avatar">乐</view>
+        <view class="header-info">
+            <view class="app-name">乐彩助手</view>
+            <view class="app-sub">彩票数据统计与选号工具</view>
+        </view>
+    </view>
+
+    <view class="card menu-card">
+        <view class="menu-item" bindtap="openRecords">
+            <view class="menu-icon">🎫</view>
+            <view class="menu-body">
+                <text class="menu-title">选号记录</text>
+                <text class="menu-desc">本地保存的单式与复式选号</text>
+            </view>
+            <text class="menu-badge" wx:if="{{recordCount > 0}}">{{recordCount}}</text>
+            <text class="menu-arrow">›</text>
+        </view>
+    </view>
+
+    <view class="card">
+        <view class="section-title">数据说明</view>
+        <view class="info-row">
+            <text class="info-label">开奖数据更新</text>
+            <text class="info-value">{{dataUpdatedAt}}</text>
+        </view>
+        <view class="info-row">
+            <text class="info-label">数据来源</text>
+            <text class="info-value">中国福彩网 / 中国体彩网</text>
+        </view>
+        <view class="info-row">
+            <text class="info-label">存储方式</text>
+            <text class="info-value">选号记录仅存于本机</text>
+        </view>
+    </view>
+
+    <view class="card notice-card">
+        <view class="section-title">理性购彩声明</view>
+        <text class="notice-text">开奖为独立随机事件，任何历史数据都无法预测未来开奖结果。本工具提供的统计与选号功能仅供娱乐参考，不构成任何投注建议。理性购彩，量力而行；未满 18 周岁禁止购买彩票。</text>
+    </view>
+
+    <view class="version-text">乐彩助手 v1.1.0</view>
+</view>

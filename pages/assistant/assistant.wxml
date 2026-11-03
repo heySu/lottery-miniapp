@@ -1,0 +1,35 @@
+<view class="page tabbed">
+    <scroll-view class="chat-area" scroll-y scroll-into-view="{{scrollInto}}" scroll-with-animation>
+        <view class="chat-inner">
+            <view class="robot-watermark" wx:if="{{messages.length === 0}}"></view>
+            <view class="welcome-card" wx:if="{{messages.length === 0}}">
+                <view class="robot-art"></view>
+                <view class="welcome-title">AI 彩票数据助手</view>
+                <view class="welcome-text">我可以解读冷热号、遗漏值等走势概念，也可以聊聊双色球、大乐透的历史数据。我不会、也不能预测中奖号码——开奖是独立随机事件。</view>
+            </view>
+
+            <view class="msg-row {{item.role === 'user' ? 'me' : ''}}" wx:for="{{messages}}" wx:key="id" id="msg-{{item.id}}">
+                <view class="bubble {{item.role === 'user' ? 'bubble-me' : 'bubble-ai'}}">{{item.text}}<text class="cursor" wx:if="{{item.loading}}">▌</text></view>
+            </view>
+
+            <view class="error-banner" wx:if="{{errorMsg}}">{{errorMsg}} <text class="retry-link" bindtap="regenerate">重新生成</text></view>
+            <view class="bottom-anchor" id="chat-bottom"></view>
+        </view>
+    </scroll-view>
+
+    <view class="quick-bar" wx:if="{{messages.length === 0 && modelReady}}">
+        <view class="quick-item" wx:for="{{quickQuestions}}" wx:key="*this" bindtap="useQuick" data-q="{{item}}">{{item}}</view>
+    </view>
+
+    <view class="input-bar">
+        <input class="chat-input" value="{{input}}" placeholder="{{modelReady ? '问问走势、玩法、数据…' : 'AI 模型加载中…'}}" disabled="{{!modelReady || generating}}" confirm-type="send" bindinput="onInput" bindconfirm="send" />
+        <button class="send-btn {{generating ? 'stop' : ''}}" bindtap="{{generating ? 'stopGenerate' : 'send'}}" disabled="{{!modelReady && !generating}}">{{generating ? '停止' : '发送'}}</button>
+    </view>
+
+    <view class="model-bar">
+        <picker mode="selector" range="{{modelNames}}" value="{{modelIndex}}" bindchange="onModelChange">
+            <text class="model-label">模型：{{currentModelName}}</text>
+        </picker>
+        <text class="disclaimer">仅供娱乐，不构成投注建议</text>
+    </view>
+</view>

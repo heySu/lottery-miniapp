@@ -1,0 +1,266 @@
+.mode-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.mode-item {
+    position: relative;
+    border: 2rpx solid #e5e8eb;
+    border-radius: 16rpx;
+    padding: 22rpx 24rpx;
+    margin-bottom: 16rpx;
+}
+
+.mode-item.active {
+    border-color: #d9483b;
+    background: #fdf4f3;
+}
+
+.mode-name {
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #1f2329;
+}
+
+.mode-item.active .mode-name {
+    color: #d9483b;
+}
+
+.mode-desc {
+    margin-top: 6rpx;
+    font-size: 24rpx;
+    color: #8a8f99;
+}
+
+.mode-check {
+    position: absolute;
+    right: 24rpx;
+    top: 24rpx;
+    width: 36rpx;
+    height: 36rpx;
+    border-radius: 50%;
+    background: #d9483b;
+    color: #ffffff;
+    font-size: 22rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.count-list {
+    display: flex;
+}
+
+.count-item {
+    padding: 14rpx 30rpx;
+    margin-right: 16rpx;
+    border-radius: 12rpx;
+    background: #f2f3f5;
+    color: #5c6067;
+    font-size: 26rpx;
+}
+
+.count-item.active {
+    background: #d9483b;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.generate-btn {
+    margin: 28rpx 24rpx;
+    background: #d9483b;
+    color: #ffffff;
+    font-size: 30rpx;
+    font-weight: 600;
+}
+
+.generate-btn.disabled {
+    opacity: 0.6;
+}
+
+.result-card {
+    padding-bottom: 12rpx;
+}
+
+.result-item {
+    padding: 20rpx 0;
+    border-top: 2rpx solid #f0f1f2;
+}
+
+.result-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16rpx;
+}
+
+.result-mode {
+    font-size: 24rpx;
+    color: #8a8f99;
+}
+
+.result-save {
+    font-size: 26rpx;
+    color: #d9483b;
+    font-weight: 600;
+    padding: 4rpx 16rpx;
+}
+
+.result-balls {
+    padding-left: 4rpx;
+}
+
+.result-plus {
+    color: #8a8f99;
+    font-size: 26rpx;
+    margin-right: 12rpx;
+}
+
+.notice-card {
+    margin-bottom: 48rpx;
+}
+
+.notice-text {
+    display: block;
+    font-size: 24rpx;
+    color: #a2a7af;
+    line-height: 1.7;
+}
+
+/* 投注方式 */
+.play-list {
+    display: flex;
+}
+
+.play-item {
+    position: relative;
+    flex: 1;
+    border: 2rpx solid #e5e8eb;
+    border-radius: 16rpx;
+    padding: 22rpx 24rpx;
+    margin-right: 16rpx;
+}
+
+.play-item:last-child {
+    margin-right: 0;
+}
+
+.play-item.active {
+    border-color: #d9483b;
+    background: #fdf4f3;
+}
+
+.play-name {
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #1f2329;
+}
+
+.play-item.active .play-name {
+    color: #d9483b;
+}
+
+.play-desc {
+    margin-top: 6rpx;
+    font-size: 22rpx;
+    color: #8a8f99;
+}
+
+.mode-item.compact {
+    padding: 16rpx 24rpx;
+}
+
+/* 复式步进器 */
+.stepper-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18rpx 0;
+    border-bottom: 2rpx solid #f0f1f2;
+}
+
+.stepper-info {
+    display: flex;
+    align-items: baseline;
+}
+
+.stepper-label {
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #1f2329;
+    margin-right: 12rpx;
+}
+
+.stepper-range {
+    font-size: 22rpx;
+    color: #8a8f99;
+}
+
+.stepper {
+    display: flex;
+    align-items: center;
+}
+
+.stepper-btn {
+    width: 56rpx;
+    height: 56rpx;
+    border-radius: 12rpx;
+    background: #f2f3f5;
+    color: #1f2329;
+    font-size: 34rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepper-btn.off {
+    color: #c3c7cd;
+    background: #f7f8fa;
+}
+
+.stepper-num {
+    min-width: 72rpx;
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #1f2329;
+}
+
+.multi-summary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 22rpx 0 8rpx;
+}
+
+.summary-bets {
+    font-size: 26rpx;
+    color: #5c6067;
+}
+
+.summary-amount {
+    font-size: 34rpx;
+    font-weight: 700;
+    color: #d9483b;
+}
+
+.multi-tip {
+    font-size: 22rpx;
+    color: #a2a7af;
+    line-height: 1.6;
+}
+
+.result-head-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.multi-badge {
+    margin-top: 6rpx;
+    font-size: 22rpx;
+    color: #d9483b;
+    background: #fdf4f3;
+    border-radius: 8rpx;
+    padding: 4rpx 12rpx;
+    align-self: flex-start;
+}

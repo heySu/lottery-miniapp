@@ -1,0 +1,44 @@
+<view class="page tabbed">
+    <view class="game-switch">
+        <view class="switch-item {{gameKey === 'ssq' ? 'active' : ''}}" data-game="ssq" bindtap="switchGame">双色球</view>
+        <view class="switch-item {{gameKey === 'dlt' ? 'active' : ''}}" data-game="dlt" bindtap="switchGame">大乐透</view>
+    </view>
+
+    <view class="card latest-card">
+        <view class="latest-head">
+            <text class="latest-label">最新开奖</text>
+            <text class="latest-issue">{{latest.code}} 期 · {{latest.date}}</text>
+        </view>
+        <view class="ball-row latest-balls">
+            <view class="ball red" wx:for="{{latest.main}}" wx:key="*this">{{item}}</view>
+            <view class="latest-plus">|</view>
+            <view class="ball blue" wx:for="{{latest.extra}}" wx:for-item="b" wx:key="*this">{{b}}</view>
+        </view>
+        <text class="draw-info">{{gameName}} · {{drawInfo}}</text>
+    </view>
+
+    <view class="quick-actions">
+        <button class="action-btn primary" bindtap="goPick">智能选号</button>
+        <button class="action-btn" bindtap="goStats">走势统计</button>
+    </view>
+
+    <view class="card">
+        <view class="section-title">近期开奖</view>
+        <view class="history-row" wx:for="{{history}}" wx:key="code">
+            <view class="history-meta">
+                <text class="history-code">{{item.code}}</text>
+                <text class="history-date">{{item.date}}</text>
+            </view>
+            <view class="ball-row">
+                <view class="ball sm red" wx:for="{{item.main}}" wx:for-item="m" wx:key="*this">{{m}}</view>
+                <view class="ball sm blue" wx:for="{{item.extra}}" wx:for-item="b" wx:key="*this">{{b}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="card notice-card">
+        <view class="section-title">温馨提示</view>
+        <text class="notice-text">{{notice}}</text>
+        <text class="data-meta">数据更新：{{dataUpdatedAt}} · 内置 {{historyCount}} 期（来源：中国福彩网 / 中国体彩网官方接口）</text>
+    </view>
+</view>

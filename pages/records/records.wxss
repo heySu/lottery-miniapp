@@ -1,0 +1,81 @@
+.page-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24rpx 32rpx 0;
+}
+
+.page-count {
+    font-size: 26rpx;
+    color: #8a8f99;
+}
+
+.clear-btn {
+    font-size: 26rpx;
+    color: #d9483b;
+}
+
+.record-card {
+    margin-top: 20rpx;
+}
+
+.record-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18rpx;
+}
+
+.record-head-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.multi-badge {
+    margin-top: 6rpx;
+    font-size: 22rpx;
+    color: #d9483b;
+    background: #fdf4f3;
+    border-radius: 8rpx;
+    padding: 4rpx 12rpx;
+    align-self: flex-start;
+}
+
+.record-title {
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #1f2329;
+}
+
+.record-del {
+    font-size: 24rpx;
+    color: #8a8f99;
+    padding: 4rpx 12rpx;
+}
+
+.record-balls {
+    padding-left: 4rpx;
+}
+
+.record-plus {
+    color: #8a8f99;
+    font-size: 26rpx;
+    margin-right: 12rpx;
+}
+
+.record-date {
+    display: block;
+    margin-top: 16rpx;
+    font-size: 22rpx;
+    color: #a2a7af;
+}
+
+.empty-tip {
+    margin-top: 12rpx;
+    font-size: 24rpx;
+    color: #b3b8bf;
+}
+
+.bottom-space {
+    height: 48rpx;
+}

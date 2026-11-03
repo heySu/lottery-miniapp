@@ -1,0 +1,36 @@
+<view class="page">
+    <view class="page-head" wx:if="{{viewState === 'ready'}}">
+        <text class="page-count">共 {{items.length}} 条</text>
+        <text class="clear-btn" bindtap="clearAll">清空</text>
+    </view>
+
+    <view class="empty-state" wx:if="{{viewState === 'loading'}}">
+        <view class="empty-icon">…</view>
+        <view class="empty-text">正在加载记录</view>
+    </view>
+
+    <view class="empty-state" wx:if="{{viewState === 'empty'}}">
+        <view class="empty-icon">🎫</view>
+        <view class="empty-text">还没有保存的选号记录</view>
+        <view class="empty-tip">去「选号」页生成一注，点击保存试试</view>
+    </view>
+
+    <block wx:if="{{viewState === 'ready'}}">
+        <view class="card record-card" wx:for="{{items}}" wx:key="id" wx:for-item="r">
+            <view class="record-head">
+                <view class="record-head-left">
+                    <text class="record-title">{{r.gameName}} · {{r.modeName}}</text>
+                    <text class="multi-badge" wx:if="{{r.isMulti}}">复式 · {{r.betCount}} 注 · {{r.amount}} 元</text>
+                </view>
+                <text class="record-del" data-id="{{r.id}}" catchtap="removeItem">删除</text>
+            </view>
+            <view class="ball-row record-balls">
+                <view class="ball sm red" wx:for="{{r.main}}" wx:for-item="m" wx:key="*this">{{m}}</view>
+                <view class="record-plus">+</view>
+                <view class="ball sm blue" wx:for="{{r.extra}}" wx:for-item="b" wx:key="*this">{{b}}</view>
+            </view>
+            <text class="record-date">{{r.dateText}}</text>
+        </view>
+        <view class="bottom-space"></view>
+    </block>
+</view>

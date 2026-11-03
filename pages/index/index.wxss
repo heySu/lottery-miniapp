@@ -1,0 +1,106 @@
+.latest-card {
+    padding: 32rpx;
+}
+
+.latest-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24rpx;
+}
+
+.latest-label {
+    font-size: 32rpx;
+    font-weight: 700;
+    color: #d9483b;
+}
+
+.latest-issue {
+    font-size: 26rpx;
+    color: #646a73;
+}
+
+.latest-balls {
+    margin-bottom: 20rpx;
+}
+
+.latest-plus {
+    color: #c9cdd4;
+    font-size: 30rpx;
+    margin: 0 8rpx 12rpx 0;
+}
+
+.draw-info {
+    display: block;
+    font-size: 24rpx;
+    color: #8a8f99;
+}
+
+.quick-actions {
+    display: flex;
+    margin: 24rpx 24rpx 0;
+}
+
+.action-btn {
+    flex: 1;
+    margin-right: 20rpx;
+    background: #ffffff;
+    color: #d9483b;
+    font-size: 28rpx;
+    font-weight: 600;
+    border: 2rpx solid #f3d3d0;
+}
+
+.action-btn.primary {
+    background: #d9483b;
+    color: #ffffff;
+    border: none;
+}
+
+.history-row {
+    display: flex;
+    align-items: center;
+    padding: 18rpx 0;
+    border-top: 2rpx solid #f0f1f2;
+}
+
+.history-row:first-of-type {
+    border-top: none;
+}
+
+.history-meta {
+    width: 150rpx;
+    display: flex;
+    flex-direction: column;
+    margin-right: 12rpx;
+    flex-shrink: 0;
+}
+
+.history-code {
+    font-size: 26rpx;
+    font-weight: 600;
+    color: #1f2329;
+}
+
+.history-date {
+    font-size: 22rpx;
+    color: #8a8f99;
+}
+
+.notice-card {
+    margin-bottom: 48rpx;
+}
+
+.notice-text {
+    display: block;
+    font-size: 26rpx;
+    color: #646a73;
+    line-height: 1.7;
+}
+
+.data-meta {
+    display: block;
+    margin-top: 16rpx;
+    font-size: 22rpx;
+    color: #a2a7af;
+}

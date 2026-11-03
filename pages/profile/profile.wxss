@@ -1,0 +1,117 @@
+.profile-header {
+    display: flex;
+    align-items: center;
+    padding: 40rpx 32rpx 24rpx;
+}
+
+.avatar {
+    width: 108rpx;
+    height: 108rpx;
+    border-radius: 32rpx;
+    background: #d9483b;
+    color: #ffffff;
+    font-size: 48rpx;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 24rpx;
+}
+
+.app-name {
+    font-size: 36rpx;
+    font-weight: 700;
+    color: #1f2329;
+}
+
+.app-sub {
+    margin-top: 8rpx;
+    font-size: 24rpx;
+    color: #8a8f99;
+}
+
+.menu-card {
+    margin-top: 16rpx;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8rpx 0;
+}
+
+.menu-icon {
+    width: 64rpx;
+    font-size: 36rpx;
+}
+
+.menu-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-title {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #1f2329;
+}
+
+.menu-desc {
+    margin-top: 4rpx;
+    font-size: 22rpx;
+    color: #8a8f99;
+}
+
+.menu-badge {
+    min-width: 36rpx;
+    padding: 2rpx 12rpx;
+    border-radius: 18rpx;
+    background: #fdf4f3;
+    color: #d9483b;
+    font-size: 22rpx;
+    text-align: center;
+    margin-right: 8rpx;
+}
+
+.menu-arrow {
+    font-size: 40rpx;
+    color: #c3c7cd;
+    line-height: 1;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16rpx 0;
+    border-bottom: 2rpx solid #f0f1f2;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-size: 26rpx;
+    color: #5c6067;
+}
+
+.info-value {
+    font-size: 26rpx;
+    color: #1f2329;
+}
+
+.notice-text {
+    display: block;
+    font-size: 24rpx;
+    color: #a2a7af;
+    line-height: 1.7;
+}
+
+.version-text {
+    text-align: center;
+    padding: 8rpx 0 48rpx;
+    font-size: 22rpx;
+    color: #c3c7cd;
+}

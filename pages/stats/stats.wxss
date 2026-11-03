@@ -1,0 +1,140 @@
+.window-switch {
+    display: flex;
+    margin: 20rpx 24rpx 0;
+    background: #ffffff;
+    border-radius: 16rpx;
+    padding: 8rpx;
+}
+
+.window-item {
+    flex: 1;
+    text-align: center;
+    padding: 12rpx 0;
+    font-size: 26rpx;
+    color: #5c6067;
+    border-radius: 12rpx;
+}
+
+.window-item.active {
+    background: #fdeceb;
+    color: #d9483b;
+    font-weight: 600;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18rpx;
+}
+
+.stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.ball.dim {
+    background: #9aa3af;
+}
+
+.stat-bar-wrap {
+    flex: 1;
+    height: 20rpx;
+    background: #f2f3f5;
+    border-radius: 10rpx;
+    overflow: hidden;
+    margin: 0 16rpx;
+}
+
+.stat-bar {
+    height: 100%;
+    border-radius: 10rpx;
+}
+
+.stat-bar.hot {
+    background: #d9483b;
+}
+
+.stat-bar.cold {
+    background: #8fb3e8;
+}
+
+.stat-bar.miss {
+    background: #e8a23a;
+}
+
+.stat-cnt {
+    width: 110rpx;
+    text-align: right;
+    font-size: 24rpx;
+    color: #646a73;
+    flex-shrink: 0;
+}
+
+.freq-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.freq-cell {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.freq-cnt {
+    margin-top: 8rpx;
+    font-size: 22rpx;
+    color: #646a73;
+}
+
+.recent-head,
+.recent-row {
+    display: flex;
+    align-items: center;
+    padding: 14rpx 0;
+}
+
+.recent-head {
+    border-bottom: 2rpx solid #f0f1f2;
+}
+
+.recent-row {
+    border-bottom: 2rpx solid #f7f8fa;
+    font-size: 26rpx;
+}
+
+.recent-row:last-child {
+    border-bottom: none;
+}
+
+.recent-col {
+    text-align: center;
+}
+
+.col-issue {
+    flex: 2;
+    color: #1f2329;
+    font-weight: 500;
+}
+
+.col-sum {
+    flex: 1;
+    color: #646a73;
+}
+
+.col-oe {
+    flex: 1;
+    color: #646a73;
+}
+
+.notice-card {
+    margin-bottom: 48rpx;
+}
+
+.notice-text {
+    display: block;
+    font-size: 24rpx;
+    color: #a2a7af;
+    line-height: 1.7;
+}

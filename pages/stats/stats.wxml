@@ -1,0 +1,71 @@
+<view class="page tabbed">
+    <view class="game-switch">
+        <view class="switch-item {{gameKey === 'ssq' ? 'active' : ''}}" data-game="ssq" bindtap="switchGame">双色球</view>
+        <view class="switch-item {{gameKey === 'dlt' ? 'active' : ''}}" data-game="dlt" bindtap="switchGame">大乐透</view>
+    </view>
+
+    <view class="window-switch">
+        <view class="window-item {{windowSize === item.value ? 'active' : ''}}" wx:for="{{windowOptions}}" wx:key="value" data-value="{{item.value}}" bindtap="switchWindow">{{item.label}}</view>
+    </view>
+
+    <view class="card">
+        <view class="section-title">{{mainLabel}}热号 Top10（出现次数）</view>
+        <view class="stat-row" wx:for="{{hotMain}}" wx:key="num">
+            <view class="ball sm red">{{item.num}}</view>
+            <view class="stat-bar-wrap">
+                <view class="stat-bar hot" style="width: {{item.pct}}%;"></view>
+            </view>
+            <text class="stat-cnt">{{item.cnt}} 次</text>
+        </view>
+    </view>
+
+    <view class="card">
+        <view class="section-title">{{mainLabel}}冷号 Top10（出现次数）</view>
+        <view class="stat-row" wx:for="{{coldMain}}" wx:key="num">
+            <view class="ball sm dim">{{item.num}}</view>
+            <view class="stat-bar-wrap">
+                <view class="stat-bar cold" style="width: {{item.pct}}%;"></view>
+            </view>
+            <text class="stat-cnt">{{item.cnt}} 次</text>
+        </view>
+    </view>
+
+    <view class="card">
+        <view class="section-title">{{extraLabel}}出现次数（近 {{windowSize}} 期）</view>
+        <view class="freq-grid">
+            <view class="freq-cell" wx:for="{{extraFreq}}" wx:key="num">
+                <view class="ball sm blue">{{item.num}}</view>
+                <text class="freq-cnt">{{item.cnt}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="card">
+        <view class="section-title">{{mainLabel}}遗漏榜 Top10（当前遗漏期数）</view>
+        <view class="stat-row" wx:for="{{omissionTop}}" wx:key="num">
+            <view class="ball sm dim">{{item.num}}</view>
+            <view class="stat-bar-wrap">
+                <view class="stat-bar miss" style="width: {{item.pct}}%;"></view>
+            </view>
+            <text class="stat-cnt">漏 {{item.miss}} 期</text>
+        </view>
+    </view>
+
+    <view class="card">
+        <view class="section-title">近 10 期主区和值 / 奇偶</view>
+        <view class="recent-head">
+            <text class="recent-col col-issue">期号</text>
+            <text class="recent-col col-sum">和值</text>
+            <text class="recent-col col-oe">奇:偶</text>
+        </view>
+        <view class="recent-row" wx:for="{{recent}}" wx:key="code">
+            <text class="recent-col col-issue">{{item.code}}</text>
+            <text class="recent-col col-sum">{{item.sum}}</text>
+            <text class="recent-col col-oe">{{item.odd}}:{{item.even}}</text>
+        </view>
+    </view>
+
+    <view class="card notice-card">
+        <text class="notice-text">{{notice}}</text>
+    </view>
+</view>

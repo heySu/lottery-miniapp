@@ -1,0 +1,105 @@
+<view class="page tabbed">
+    <view class="game-switch">
+        <view class="switch-item {{gameKey === 'ssq' ? 'active' : ''}}" data-game="ssq" bindtap="switchGame">双色球</view>
+        <view class="switch-item {{gameKey === 'dlt' ? 'active' : ''}}" data-game="dlt" bindtap="switchGame">大乐透</view>
+    </view>
+
+    <view class="card">
+        <view class="section-title">投注方式</view>
+        <view class="play-list">
+            <view class="play-item {{playType === 'single' ? 'active' : ''}}" data-type="single" bindtap="switchPlay">
+                <view class="play-name">单式</view>
+                <view class="play-desc">每注标准号码组合</view>
+                <view class="mode-check" wx:if="{{playType === 'single'}}">✓</view>
+            </view>
+            <view class="play-item {{playType === 'multi' ? 'active' : ''}}" data-type="multi" bindtap="switchPlay">
+                <view class="play-name">复式</view>
+                <view class="play-desc">多选号码，自动组合成多注</view>
+                <view class="mode-check" wx:if="{{playType === 'multi'}}">✓</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="card" wx:if="{{playType === 'single'}}">
+        <view class="section-title">选号模式</view>
+        <view class="mode-list">
+            <view class="mode-item {{mode === item.key ? 'active' : ''}}" wx:for="{{modes}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectMode">
+                <view class="mode-name">{{item.name}}</view>
+                <view class="mode-desc">{{item.desc}}</view>
+                <view class="mode-check" wx:if="{{mode === item.key}}">✓</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="card" wx:if="{{playType === 'single'}}">
+        <view class="section-title">注数</view>
+        <view class="count-list">
+            <view class="count-item {{count === item ? 'active' : ''}}" wx:for="{{countOptions}}" wx:key="*this" data-count="{{item}}" bindtap="setCount">{{item}} 注</view>
+        </view>
+    </view>
+
+    <view class="card" wx:if="{{playType === 'multi' && multi}}">
+        <view class="section-title">选号模式</view>
+        <view class="mode-list">
+            <view class="mode-item compact {{mode === item.key ? 'active' : ''}}" wx:for="{{modes}}" wx:key="key" data-mode="{{item.key}}" bindtap="selectMode">
+                <view class="mode-name">{{item.name}}</view>
+                <view class="mode-check" wx:if="{{mode === item.key}}">✓</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="card" wx:if="{{playType === 'multi' && multi}}">
+        <view class="section-title">复式号码个数</view>
+        <view class="stepper-row">
+            <view class="stepper-info">
+                <text class="stepper-label">{{multi.mainLabel}}</text>
+                <text class="stepper-range">{{multi.mainMin}}-{{multi.mainMax}} 个</text>
+            </view>
+            <view class="stepper">
+                <view class="stepper-btn {{multi.canMinusMain ? '' : 'off'}}" data-delta="-1" bindtap="changeMainCount">−</view>
+                <text class="stepper-num">{{multi.mainCount}}</text>
+                <view class="stepper-btn {{multi.canPlusMain ? '' : 'off'}}" data-delta="1" bindtap="changeMainCount">＋</view>
+            </view>
+        </view>
+        <view class="stepper-row">
+            <view class="stepper-info">
+                <text class="stepper-label">{{multi.extraLabel}}</text>
+                <text class="stepper-range">{{multi.extraMin}}-{{multi.extraMax}} 个</text>
+            </view>
+            <view class="stepper">
+                <view class="stepper-btn {{multi.canMinusExtra ? '' : 'off'}}" data-delta="-1" bindtap="changeExtraCount">−</view>
+                <text class="stepper-num">{{multi.extraCount}}</text>
+                <view class="stepper-btn {{multi.canPlusExtra ? '' : 'off'}}" data-delta="1" bindtap="changeExtraCount">＋</view>
+            </view>
+        </view>
+        <view class="multi-summary">
+            <text class="summary-bets">共 {{multi.betCount}} 注</text>
+            <text class="summary-amount">{{multi.amount}} 元</text>
+        </view>
+        <view class="multi-tip">按基本投注 {{multi.betPrice}} 元/注计算，不含追加。复式金额随号码个数增长很快，请量力而行。</view>
+    </view>
+
+    <button class="generate-btn {{generating ? 'disabled' : ''}}" bindtap="generate">{{generating ? '生成中…' : (playType === 'multi' ? '生成复式号码' : '生成号码')}}</button>
+
+    <view class="card result-card" wx:if="{{hasResult}}">
+        <view class="section-title">生成结果（{{gameName}}）</view>
+        <view class="result-item" wx:for="{{results}}" wx:key="sn" wx:for-item="r">
+            <view class="result-head">
+                <view class="result-head-left">
+                    <text class="result-mode">{{r.modeName}}</text>
+                    <text class="multi-badge" wx:if="{{r.isMulti}}">复式 {{r.multiLabel}} · {{r.betCount}} 注 · {{r.amount}} 元</text>
+                </view>
+                <text class="result-save" data-index="{{index}}" bindtap="saveResult">保存</text>
+            </view>
+            <view class="ball-row result-balls">
+                <view class="ball sm red" wx:for="{{r.main}}" wx:for-item="m" wx:key="*this">{{m}}</view>
+                <view class="result-plus">+</view>
+                <view class="ball sm blue" wx:for="{{r.extra}}" wx:for-item="b" wx:key="*this">{{b}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="card notice-card">
+        <text class="notice-text">{{notice}}</text>
+    </view>
+</view>

@@ -1,0 +1,80 @@
+.tab-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    height: 104rpx;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 -4rpx 20rpx rgba(31, 35, 41, 0.06);
+    z-index: 999;
+}
+
+/* 滑动胶囊高亮：宽度 = 1/5，随选中项平移，带回弹缓动 */
+.tab-pill {
+    position: absolute;
+    top: 14rpx;
+    left: 0;
+    width: 20%;
+    height: 76rpx;
+    border-radius: 38rpx;
+    background: #fdf4f3;
+    transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+.tab-item {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-text {
+    font-size: 26rpx;
+    color: #8a8f99;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tab-item.active .tab-text {
+    color: #d9483b;
+    font-weight: 700;
+    animation: tab-pop 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 选中项弹跳 */
+@keyframes tab-pop {
+    0% {
+        transform: scale(0.86);
+    }
+    60% {
+        transform: scale(1.12);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* AI tab 机器人图标 */
+.tab-item {
+    flex-direction: column;
+    gap: 2rpx;
+}
+
+.tab-icon {
+    width: 40rpx;
+    height: 40rpx;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+CiAgPGxpbmUgeDE9IjI0IiB5MT0iNSIgeDI9IjI0IiB5Mj0iMTEiIHN0cm9rZT0iI2MzYzdjZCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjUiIHI9IjMuNSIgZmlsbD0iI2Q5NDgzYiIvPgogIDxyZWN0IHg9IjYiIHk9IjIxIiB3aWR0aD0iNCIgaGVpZ2h0PSIxMiIgcng9IjIiIGZpbGw9IiNlNWU4ZWIiLz4KICA8cmVjdCB4PSIzOCIgeT0iMjEiIHdpZHRoPSI0IiBoZWlnaHQ9IjEyIiByeD0iMiIgZmlsbD0iI2U1ZThlYiIvPgogIDxyZWN0IHg9IjEwIiB5PSIxMyIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTVlOGViIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8Y2lyY2xlIGN4PSIxOCIgY3k9IjI1IiByPSIyLjgiIGZpbGw9IiM4YThmOTkiLz4KICA8Y2lyY2xlIGN4PSIzMCIgY3k9IjI1IiByPSIyLjgiIGZpbGw9IiM4YThmOTkiLz4KICA8cGF0aCBkPSJNMjAgMzIgcTQgMyA4IDAiIHN0cm9rZT0iI2Q5NDgzYiIgc3Ryb2tlLXdpZHRoPSIyLjQiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.45;
+    transition: opacity 0.2s ease;
+}
+
+.tab-item.active .tab-icon {
+    opacity: 1;
+    animation: tab-pop 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}

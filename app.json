@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pick/pick",
+    "pages/stats/stats",
+    "pages/profile/profile",
+    "pages/records/records",
+    "pages/assistant/assistant"
+  ],
+  "window": {
+    "navigationBarTitleText": "乐彩助手",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f5f7fa",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#8a8f99",
+    "selectedColor": "#d9483b",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "开奖"
+      },
+      {
+        "pagePath": "pages/pick/pick",
+        "text": "选号"
+      },
+      {
+        "pagePath": "pages/assistant/assistant",
+        "text": "AI"
+      },
+      {
+        "pagePath": "pages/stats/stats",
+        "text": "走势"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
